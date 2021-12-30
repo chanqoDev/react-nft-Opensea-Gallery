@@ -6,7 +6,7 @@ const PunkList = ({ punkListData }) => {
   return (
     <div className="punkList">
       {punkListData.map((punk) => (
-        <div>
+        <div onClick={() => console.log(punk.token_id)}>
           <CollectionCard
             key={punk.token_id}
             id={punk.token_id}
