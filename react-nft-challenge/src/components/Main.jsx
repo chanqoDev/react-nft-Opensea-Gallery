@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./main.css";
-import OwnerImg from "../assets/owner/punkhead.png";
+// import OwnerImg from "../assets/owner/punkhead.png";
 import instagramLogo from "../assets/owner/instagram.png";
 import twitterLogo from "../assets/owner/twitter.png";
 import moreIcon from "../assets/owner/more.png";

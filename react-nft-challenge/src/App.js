@@ -9,7 +9,7 @@ import Main from "./components/Main";
 
 function App() {
   // async await with our api
-  // create a buck of data
+  // create a buck of data"key": "price", "value": "13"
   //  punkListData will store all the punks
   const [punkListData, setPunkListData] = useState([]);
   const [selectedPunk, setSelectedPunk] = useState(0); // state variable
@@ -18,7 +18,7 @@ function App() {
   useEffect(() => {
     const getMyNfts = async () => {
       const openseaData = await axios.get(
-        "https://testnets-api.opensea.io/assets?asset_contract_address=0xe13657684cD8F1f2617AEa43eb2AA211bd384e51&order_direction=asc"
+        "https://testnets-api.opensea.io/assets?asset_contract_address=0x3752dDaa1e5F523Ec476Ff2c2f76600bf9432d36&order_direction=asc"
       );
       // console.log(openseaData.data.assets);
       setPunkListData(openseaData.data.assets);
