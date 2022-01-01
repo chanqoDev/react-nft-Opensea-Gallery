@@ -1,7 +1,7 @@
 // import logo from "./logo.svg";
 import "./App.css";
 import Header from "./components/Header";
-// import CollectionCard from "./components/CollectionCard";
+import CollectionCard from "./components/CollectionCard";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import PunkList from "./components/PunkList";
@@ -12,6 +12,8 @@ function App() {
   // create a buck of data
   //  punkListData will store all the punks
   const [punkListData, setPunkListData] = useState([]);
+  const [selectedPunk, setSelectedPunk] = useState(0); // state variable
+
   // useEffect will have empty dependencies
   useEffect(() => {
     const getMyNfts = async () => {
@@ -21,21 +23,28 @@ function App() {
       // console.log(openseaData.data.assets);
       setPunkListData(openseaData.data.assets);
     };
-
     return getMyNfts();
   }, []);
 
   return (
     <div className="app">
       <Header />
-      <Main />
+      {punkListData.length > 0 && (
+        <>
+          <Main punkListData={punkListData} selectedPunk={selectedPunk} />
+          <PunkList
+            punkListData={punkListData}
+            setSelectedPunk={setSelectedPunk}
+          />
+        </>
+      )}
+
       {/* <CollectionCard
         id={0}
         name={"kikko punk"}
         traits={[{ value: 8 }]}
         image="https://lh3.googleusercontent.com/zOmQUbs9DhiXNi7U9aWWzrmfTfIdH-oIRETrLyKSr7_1huclb28J_TUaAtcIvVBQSllvXJA13PxJmtPtwU05_Ozt1FsGyWynHcJiSA=w600"
       /> */}
-      <PunkList punkListData={punkListData} />
     </div>
   );
 }
