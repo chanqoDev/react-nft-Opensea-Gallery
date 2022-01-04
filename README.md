@@ -4,7 +4,7 @@
 
 ## How to Mint new NFT
 
-Using ThridWeb.com we are able to easily Mint and depOly the nfts
+Using ThridWeb.com we are able to easily Mint and depoly the nfts
 
 Connnected to MetaMask Rinkeby Test Network
 
